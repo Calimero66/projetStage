@@ -4,7 +4,7 @@ import { BiUserCircle } from "react-icons/bi";
 import { AiOutlineLock } from "react-icons/ai";
 import { Checkbox } from "@material-tailwind/react";
 
-import logo from './../icon/G-logo.png'
+import logo from './../icon/logo.png'
 
 
 const SignIn = () => {
@@ -13,7 +13,7 @@ const SignIn = () => {
         <>
             <div className='flex justify-center items-center bg-[#747264]  h-[45px]  '>
 
-                <img className='h-[35px] py-1' src={logo} alt="G-logo" />
+                <img className='h-20 py-1' src={logo} alt="G-logo" />
 
             </div>
             <div className='h-[calc(100vh-45px)] flex justify-center items-center'>
