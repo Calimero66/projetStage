@@ -1,5 +1,5 @@
 import React from 'react'
-import iconManagement from '../../icon/logo.png'
+import iconManagement from '../../icon/Asset_1.svg'
 import {sidebarLinksAdmin ,dashboardSidebarBottomLinks} from '../Admin/AdminInfo'
 import { Link, useLocation } from 'react-router-dom'
 // import {LogOut} from 'lucide-react';
@@ -17,12 +17,13 @@ const Sidebar = () => {
 
 
     return (
-        <div className=' flex flex-col bg-[#747264]  text-white w-[280px] p-[12px] '>
 
-            <div className=' flex items-center justify-center '>
+        <div className=' flex flex-col bg-[#153448]  text-white w-[280px] p-[12px] rounded-r-xl '>
+
+            <div className=' flex items-center justify-center border-b-2 '>
 
                 <img
-                    className=' w-20 h-20 '
+                    className=' w-12 h-12 '
                     src={iconManagement}
                     alt='Management'
                 />
@@ -34,7 +35,7 @@ const Sidebar = () => {
                 
                 {sidebarLinksAdmin.map((item) => (
                     <div key={item.key} >
-                        <Link to={item.path} className={`flex flex-grow gap-2 items-center py-2 px-3 hover:bg-blue-gray-500 active:bg-green-700 rounded-md  ${location.pathname === item.path && 'text-black bg-blue-500'}`}>
+                        <Link to={item.path} className={`flex flex-grow gap-2 items-center py-2 px-3 hover:bg-blue-gray-500 active:bg-[#DFD0B8] rounded-md  ${location.pathname === item.path && 'text-black bg-blue-500'}`}>
                             {item.icon}
                             {item.label}
                         </Link>

@@ -4,16 +4,16 @@ import { BiUserCircle } from "react-icons/bi";
 import { AiOutlineLock } from "react-icons/ai";
 import { Checkbox } from "@material-tailwind/react";
 
-import logo from './../icon/logo.png'
+import logo from './../icon/Asset_1.svg'
 
 
 const SignIn = () => {
 
     return (
         <>
-            <div className='flex justify-center items-center bg-[#747264]  h-[45px]  '>
+            <div className='flex justify-center items-center bg-[#948979]  h-[45px]  '>
 
-                <img className='h-20 py-1' src={logo} alt="G-logo" />
+                <img className='h-12 py-1' src={logo} alt="G-logo" />
 
             </div>
             <div className='h-[calc(100vh-45px)] flex justify-center items-center'>
@@ -48,7 +48,7 @@ const SignIn = () => {
                             {/* <span className=' text-[#3C3633] font-semibold ' > <Link to='/ForgotPassword'>Forgot password </Link></span> */}  {/* i will add this later if i need it  */}
                         </div>
 
-                        <button className='w-full mb-4 text-[20px] mt-6 rounded-full text-[#3C3633] bg-[#747264] hover:bg-[#3C3633] hover:text-[#E0CCBE] transition-colors duration-380 italic' type="submit" >Log in</button>
+                        <button className='w-full mb-4 text-[20px] mt-6 rounded-full text-[#153448] bg-[#948979] hover:bg-[#3C5B6F] hover:text-[#948979] transition-colors duration-380 italic' type="submit" >Log in</button>
 
                     </form>
                 </div>

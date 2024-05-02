@@ -9,12 +9,12 @@ import {
 } from 'lucide-react';
 
 export const sidebarLinksAdmin = [
-	// {
-	// 	key: 'dashboard',
-	// 	label: 'Dashboard',
-	// 	path: '/Dashboard',
-	// 	icon: <LayoutDashboard  />
-	// },
+	{
+		key: 'dashboard',
+		label: 'Dashboard',
+		path: '/Dashboard',
+		icon: <LayoutDashboard  />
+	},
 	{
 		key: 'CreateManager',
 		label: 'Create Manager',
