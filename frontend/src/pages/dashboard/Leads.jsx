@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import {
   Typography,
-  Alert,
   Card,
   CardHeader,
   CardBody,
 } from "@material-tailwind/react";
-import { InformationCircleIcon } from "@heroicons/react/24/outline";
-import Papa from 'papaparse'; // You need to install Papaparse to parse CSV files
-import { saveAs } from 'file-saver'; // You need to install file-saver to save files
+
+import Papa from 'papaparse'; 
+import { saveAs } from 'file-saver'; 
 
 function ColumnDropdown({ label, value, onChange, columns }) {
   return (
@@ -47,9 +46,9 @@ export function Leads() {
   };
 
   const handleGenerateTable = () => {
-    // Filter out empty selections
+    
     const selectedColumns = [idColumn, fNameColumn, numberColumn, dateColumn].filter(column => column !== "");
-    // Extract data for selected columns
+    
     const selectedData = csvData.map(row => {
       return selectedColumns.map(column => row[column]);
     });
@@ -57,16 +56,12 @@ export function Leads() {
   };
 
   const handleSaveCSV = () => {
-    // Custom header row
     const customHeaderRow = ['ID', 'FName', 'Number', 'Date'];
-
-    // Combine custom header row with table data
     const csvDataWithHeader = [
       customHeaderRow,
       ...tableData
     ];
 
-    // Generate CSV with custom header
     const csv = Papa.unparse(csvDataWithHeader, { header: false }); // Disable automatic header
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
     saveAs(blob, 'table_data.csv');
