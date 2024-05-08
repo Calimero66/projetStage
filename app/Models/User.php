@@ -42,11 +42,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-
-    public function leads(): HasMany
-    {
-        return $this->hasMany(Lead::class);
-    }
-
-    
 }

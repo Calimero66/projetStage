@@ -8,29 +8,40 @@ import {
 import { Link } from "react-router-dom";
 import React, { useState } from 'react';
 import axios from 'axios';
+//import axios from "./axios.js";
 
-function SignIn() {
+export function SignIn() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log(username);
+    console.log(password);
 
-    try {
-      const response = await axios.post('http://localhost:8000/api/auth/sign-in', {
-        username,
-        password,
+
+
+    axios.defaults.withCredentials = true;
+    // axios.defaults.headers['Content-Type'] = "multipart/form-data";
+
+      const response = await axios.post('/api/login', {
+        'email':username,
+        'password':password,
+      },{ 
+        //xsrfHeaderName: "X-XSRF-TOKEN", // change the name of the header to "X-XSRF-TOKEN" and it should works
+        //withCredentials: true,
+        
+          //Authorization: 'Bearer ' + token, //the token is a variable which holds the token,
+          
+
+        
       });
 
-      // Redirect to the dashboard
-      history.push('/dashboard');
-    } catch (error) {
-      console.error(error);
-    }
+      console.log(response.data.access_token);
+      // localStorage.setItem('token', JSON.stringify(response.data.access_token));
+
   };
-
   return (
-
     <section className="m-8 flex gap-4">
       <div className="w-full lg:w-3/5 mt-24">
         <div className="text-center">
