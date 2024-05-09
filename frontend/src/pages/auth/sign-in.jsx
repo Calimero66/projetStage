@@ -22,19 +22,18 @@ export function SignIn() {
 
 
     axios.defaults.withCredentials = true;
+    axios.defaults.withXSRFToken = true;
+
+
     // axios.defaults.headers['Content-Type'] = "multipart/form-data";
 
       const response = await axios.post('/api/login', {
         'email':username,
         'password':password,
       },{ 
-        //xsrfHeaderName: "X-XSRF-TOKEN", // change the name of the header to "X-XSRF-TOKEN" and it should works
+        // xsrfHeaderName: "X-XSRF-TOKEN", // change the name of the header to "X-XSRF-TOKEN" and it should works
         //withCredentials: true,
-        
-          //Authorization: 'Bearer ' + token, //the token is a variable which holds the token,
-          
-
-        
+        //Authorization: 'Bearer ' + token, //the token is a variable which holds the token,
       });
 
       console.log(response.data.access_token);
